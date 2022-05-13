@@ -8,7 +8,58 @@
     <title>My book library</title>
 </head>
 <body>
-    
+    <main>
+
+        <header class="header">
+            <h2>Book library</h1>
+            <button class="add-book-button">Add book</button>
+        </header>
+            
+        <div class="form-wrapper">
+
+            <header class="form-header">
+                <p>Add a new book</p>
+                <p class="form-closer"></p>
+            </header>
+
+            <form>
+
+                <label for="title" class="text">
+                    <p>Title</p>
+                    <input type="text" name="title" maxlength="50" placeholder="Harry Potter" autofocus required>
+                </label>
+
+                <label for="author" class="text">
+                    <p>Author</p>
+                    <input type="text" name="author" maxlength="50" placeholder="JK Rowling" required>
+                </label>
+
+                <label for="pages" class="text">
+                    <p>Pages</p>
+                    <input type="number" min="1" max="100000" name="pages" placeholder="687" required>
+                </label>
+
+                <label for="read" class="radio">
+                    <input type="radio" name="read" class="read" id="read" value="Yes">
+                    Finished
+                </label>
+
+                <label for="not-read" class="radio">
+                    <input type="radio" name="read" class="read" id="not-read" value="No" checked>
+                    Not finished
+                </label>
+
+                <div class="submit-wrapper">
+                    <input type="submit" name="submit" value="Submit">
+                </div>
+
+            </form>
+
+        </div>
+
+        <section class="card-wrapper"></section>
+
+    </main>
     <script defer src="script.js"></script>
 </body>
 </html>

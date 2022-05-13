@@ -1,0 +1,68 @@
+*,
+*:before,
+*:after { 
+    box-sizing: border-box; 
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --main-background-color: white;
+    --main-header-color: #393E46;
+    --card-color: white;
+    --paragraph-color: black;
+}
+
+html, body { min-height: 100vh; }
+
+html {
+    background-color: var(--main-background-color);
+}
+
+body {
+    font-family: 'Roboto','Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #001e1d;
+}
+
+.form-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.text {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.radio {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.submit-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-wrapper {
+    display: flex;
+    justify-content: center;  
+    flex-wrap: wrap;
+}

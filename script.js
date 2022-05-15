@@ -65,12 +65,14 @@ function addBtnsToDiv() {
 
     changeBtn = document.createElement("button");
     changeBtn.classList.add("change");
-    changeBtn.classList.add("card-text");
+    // changeBtn.classList.add("card-text");
     
     if (myLibrary[bookDiv.dataset.index].read === 'Yes') {
         changeBtn.textContent = "READ";
+        changeBtn.classList.add("read-color");
     } else {
         changeBtn.textContent = "NOT READ";
+        changeBtn.classList.remove("read-color");
     }
     bookDiv.appendChild(changeBtn);
 }
@@ -81,9 +83,11 @@ function changeReadStatus(event) {
         if (myLibrary[deleteArray].read === 'Yes') {
             myLibrary[deleteArray].read = 'No';
             event.target.textContent = "NOT READ";
+            event.target.classList.remove("read-color");
         } else {
             myLibrary[deleteArray].read = 'Yes';
             event.target.textContent = "READ";
+            event.target.classList.add("read-color");
         }
     }
 }

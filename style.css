@@ -8,11 +8,12 @@
 
 :root {
     --main-background-color: white;
-    --main-header-color: #393E46;
-    --paragraph-color: black;
-    --button-theme: white;
-    --button-text: black;
-     --card-color: white;
+    --header-color: #d1d1e9;
+    --header-text: #094067;
+    --button-color: #ef4565;
+    --button-text: #fffffe;
+    --card-color: #d1d1e9;
+    --card-text: #094067;
 }
 
 html, body { min-height: 100vh; }
@@ -30,23 +31,28 @@ main {
     flex-direction: column;
 }
 
-button, 
-input[type="submit"] {
-    color: var(--button-text);
-    border: 1px solid black;
-    background-color: var(--button-theme);
-
-    padding: 10px;
-    font-weight: bold;
-}
-
 .header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: var(--main-header-color);
+    background-color: var(--card-color);
 
     padding: 15px;
+}
+
+.add-book-button {
+    color: var(--header-text);
+    border: 2px solid var(--header-text);
+    background-color: var(--main-background-color);
+
+    padding: 10px 15px 10px 15px;
+    font-weight: bold;
+}
+
+.add-book-button:hover {
+    color: var(--button-text);
+    border: 2px solid var(--button-color);
+    background-color: var(--button-color);
 }
 
 .form-wrapper {
@@ -64,10 +70,10 @@ input[type="submit"] {
     top: 50%;
     display: block;
     background-color: var(--card-color);
-    color: var(--paragraph-color);
+    color: var(--card-text);
     z-index: 100;
 
-    border: 1px solid black;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.1);
 }
 
 .blur.active {
@@ -81,7 +87,7 @@ form {
     flex-direction: column;
     justify-content: stretch;
 
-    padding: 10px;
+    padding: 20px 20px 10px 20px;
 }
 
 form > * {
@@ -101,11 +107,27 @@ form > * {
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
+    color: var(--card-text);
 }
 
 .read {
     transform: scale(1.3);
     margin: 8px;
+}
+
+input[type="text"],
+input[type="number"] {
+    background-color: white;
+    color: black;
+    border: 0.2px solid white;
+    padding: 10px;
+    font-weight: bold;
+}
+
+input::placeholder {
+    color: black;
+    opacity: 0.4;
+    font-weight: bold;
 }
 
 .submit-wrapper {
@@ -118,6 +140,23 @@ form > * {
     margin: 0px 5px 0px 5px;
 }
 
+input[type="submit"],
+.form-closer {
+    color: var(--card-text);
+    border: 2px solid var(--card-text);
+    background-color: var(--card-color);
+
+    padding: 10px 15px 10px 15px;
+    font-weight: bold;
+}
+
+input[type="submit"]:hover,
+.form-closer:hover {
+    color: var(--button-text);
+    border: 2px solid var(--button-color);
+    background-color: var(--button-color);
+}
+
 .card-wrapper {
     display: flex;
     justify-content: center;  
@@ -125,17 +164,18 @@ form > * {
 }
 
 .card-wrapper > div {
-    color: var(--paragraph-color);
+    color: var(--card-text);
     background-color: var(--card-color);
     width: 300px;
     word-wrap: break-word;
 
     display: flex;
     flex-direction: column;
-
-    border: 1px solid black;
+    justify-content: space-between;
 
     margin: 10px;
+    
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.1);
 }
 
 .card-header {
@@ -145,17 +185,44 @@ form > * {
 
 .card-text {
     text-align: center;
-    margin: 10px;
+    margin: 10px 10px 20px 10px;
+}
+
+.change {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: var(--button-text);
+    border: 2px solid var(--button-color);
+    background-color: var(--button-color);
+
+    padding: 10px 15px 10px 15px;
+    font-weight: bold;
+}
+
+.change:hover {
+    opacity: 0.8;
+}
+
+.read-color {
+    color: var(--button-text);
+    background-color: rgb(79, 162, 70);
+    border: 2px solid rgb(79, 162, 70);
 }
 
 .card-closer {
-    background: url(images/x-square.svg) no-repeat center center; 
+    background: url(images/x.svg) no-repeat center center; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
     cursor: pointer;
 
-    padding: 15px;
+    padding: 12px;
     margin: 5px;
+}
+
+.card-closer:hover {
+    opacity: 0.5;
 }
